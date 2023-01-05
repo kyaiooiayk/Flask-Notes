@@ -68,7 +68,7 @@ def classify():
    return json.dumps({score: prediction})
 ```
 
-- This setup is a quick and easy implementation, perfect for demonstration projects. However, it is not recommended to deploy machine learning models to production endpoints, because of these 3 main reasons:
+- This setup is a quick and easy implementation, perfect for demonstration projects (an alternative is TensorFlow Serving). However, it is not recommended to deploy machine learning models to production endpoints, because of these 3 main reasons:
    - **Lack of code separation** btw the ML model and the API calls. The lack of code separation also requires that the model has to be loaded in the same programming language as the API code. This mixing of backend and data science code can ultimately prevent your API team from upgrading your API backend. 
    - **Lack of model version control** as there is no provision for different model versions. If you wanted to add a new version, you would have to create a new endpoint (or add some branching logic to the existing endpoint). This requires extra attention to keep all endpoints structurally the same, and it requires a lot of boilerplate code. 
    - **Inefficient model inference** where each request is preprocessed and inferred individually. During the training of your model, you will probably use a batching technique that allows you to compute multiple samples at the same time and then apply the gradient change for your batch to your network’s weights. 
