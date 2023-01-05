@@ -74,6 +74,15 @@ def classify():
    - **Inefficient model inference** where each request is preprocessed and inferred individually. During the training of your model, you will probably use a batching technique that allows you to compute multiple samples at the same time and then apply the gradient change for your batch to your network’s weights. 
 ***
 
+## Available tutorials
+- [ETL pipeline](https://github.com/kyaiooiayk/Flask-Notes/tree/main/tutorials/ETL_pipeline)
+- [Flask with Heroku public server deployment](https://github.com/kyaiooiayk/Flask-Notes/tree/main/tutorials/Flask_and_Heroku_public_server)
+- [Hello_World](https://github.com/kyaiooiayk/Flask-Notes/tree/main/tutorials/Hello_World)
+- [React &Flask & Heroku](https://github.com/kyaiooiayk/Flask-Notes/tree/main/tutorials/React_Flask_Heroku)
+- [Simple linear regression app](https://github.com/kyaiooiayk/Flask-Notes/tree/main/tutorials/Simple_linear_regression)
+- [Twitter hate speech detector app](https://github.com/kyaiooiayk/Flask-Notes/tree/main/tutorials/Twitter_hate_speech_detector)
+***
+
 ## Resources
 - [list of resources](https://www.fullstackpython.com/flask.html)
 - [Model Deployment using Flask](https://towardsdatascience.com/model-deployment-using-flask-c5dcbb6499c9)
@@ -81,4 +90,3 @@ def classify():
 - [Flask Django a thorough comparison](https://codesource.io/flask-vs-django-an-in-depth-comparison/)
 - Hapke, Hannes, and Catherine Nelson. Building machine learning pipelines. O'Reilly Media, 2020
 ***
- 
