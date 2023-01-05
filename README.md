@@ -42,10 +42,43 @@
 - For some small project is fine but if you want to see how to deploy a Flask application properly see [this](https://flask.palletsprojects.com/en/1.1.x/deploying/)
 ***
 
+## The Downside of simple model server deployment with a Python-Based APIs
+- Most introductions to deploying machine learning models follow roughly the same workflow:
+   1. Create a web app with Python (i.e., with web frameworks like Flask or Django).
+   2. Create an API endpoint in the web app, as we show in Example 8- 1.
+   3. Load the model structure and its weights.
+   4. Call the predict method on the loaded model.
+   5. Return the prediction results as an HTTP request.
+
+- An example in Flask looks like this:
+```
+import jason
+from flask import Flask, request
+from tensorflow.keras.models import load_model
+from utils import preprocess
+
+model = load_model("model.h5")
+app = Flask(__name__)
+
+@app.route("/classify", methos=["POST"])
+def classify():
+   data_in = request.from["data"]
+   proprocessed_data = preprocess(data_in)
+   prediction = model.predict(proprocessed_data)
+   return json.dumps({score: prediction})
+```
+
+- This setup is a quick and easy implementation, perfect for demonstration projects. However, it is not recommended to deploy machine learning models to production endpoints, because of these 3 main reasons:
+   - **Lack of code separation** btw the ML model and the API calls. The lack of code separation also requires that the model has to be loaded in the same programming language as the API code. This mixing of backend and data science code can ultimately prevent your API team from upgrading your API backend. 
+   - **Lack of model version control** as there is no provision for different model versions. If you wanted to add a new version, you would have to create a new endpoint (or add some branching logic to the existing endpoint). This requires extra attention to keep all endpoints structurally the same, and it requires a lot of boilerplate code. 
+   - **Inefficient model inference** where each request is preprocessed and inferred individually. During the training of your model, you will probably use a batching technique that allows you to compute multiple samples at the same time and then apply the gradient change for your batch to your network’s weights. 
+***
+
 ## Resources
 - [list of resources](https://www.fullstackpython.com/flask.html)
 - [Model Deployment using Flask](https://towardsdatascience.com/model-deployment-using-flask-c5dcbb6499c9)
 - [How To Build & Deploy a React + Flask](https://towardsdatascience.com/build-deploy-a-react-flask-app-47a89a5d17d9)
 - [Flask Django a thorough comparison](https://codesource.io/flask-vs-django-an-in-depth-comparison/)
+- Hapke, Hannes, and Catherine Nelson. Building machine learning pipelines. O'Reilly Media, 2020
 ***
  
