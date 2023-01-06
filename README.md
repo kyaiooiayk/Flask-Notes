@@ -90,10 +90,19 @@ def classify():
 - [Twitter hate speech detector app](https://github.com/kyaiooiayk/Flask-Notes/tree/main/tutorials/Twitter_hate_speech_detector)
 ***
 
+## Flask with Nginx and uWSGI
+- [[uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/)] is an application server that aims to provide a full stack for developing and deploying web applications and services. It is named after the Web Server Gateway Interface, which was the first plugin supported by the project.
+- [[Nginx](https://www.nginx.com/)] is a web server that can also be used as a reverse proxy (which provides a more robust connection handling), load balancer, mail proxy and HTTP cache.
+
+![image](https://user-images.githubusercontent.com/89139139/211042157-326ffac2-71ca-449e-ad10-16055fa6b20b.png)
+
+***
+
 ## Resources
 - [list of resources](https://www.fullstackpython.com/flask.html)
 - [Model Deployment using Flask](https://towardsdatascience.com/model-deployment-using-flask-c5dcbb6499c9)
 - [How To Build & Deploy a React + Flask](https://towardsdatascience.com/build-deploy-a-react-flask-app-47a89a5d17d9)
 - [Flask Django a thorough comparison](https://codesource.io/flask-vs-django-an-in-depth-comparison/)
 - Hapke, Hannes, and Catherine Nelson. Building machine learning pipelines. O'Reilly Media, 2020
+- [How to use uWSGI and Nginx to serve a Deep Learning model](https://theaisummer.com/uwsgi-nginx/)
 ***
