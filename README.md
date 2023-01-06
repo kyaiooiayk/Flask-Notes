@@ -39,13 +39,20 @@
 ## Flask and scaling up
 - Flask’s built-in server is not suitable for production as it doesn’t scale well. 
 - The Flask server is not powerful enough to support production loads. Instead, you should use gunicorn and nginx for proper deployment.
-- For some small project is fine but if you want to see how to deploy a Flask application properly see [this](https://flask.palletsprojects.com/en/1.1.x/deploying/)
+- For some small project is fine but if you want to see how to deploy a Flask application properly see [this](https://flask.palletsprojects.com/en/1.1.x/deploying/) or [this](https://theaisummer.com/uwsgi-nginx/).
+- While Flask can act as an HTTP web server, it was not developed and optimized for security, scalability, and efficiency. It is rather a framework to build web applications as explained in the previous article. List of things Flask doesn’t even touch but you'd need in production:
+   - Process management: it handles the creation and maintenance of multiple processes so we can have a concurrent app in one environment, and is able to scale to multiple users.
+   - Clustering: it can be used in a cluster of instances
+   - Load balancing: it balances the load of requests to different processes
+   - Monitoring: it provides out of the box functionality to monitor the performance and resource utilization
+   - Resource limiting: it can be configured to limit the CPU and memory usage up to a specific point
+   - Configuration: it has a huge variety of configurable options that gives us full control over its execution
 ***
 
 ## The Downside of simple model server deployment with a Python-Based APIs
 - Most introductions to deploying machine learning models follow roughly the same workflow:
    1. Create a web app with Python (i.e., with web frameworks like Flask or Django).
-   2. Create an API endpoint in the web app, as we show in Example 8- 1.
+   2. Create an API endpoint in the web app
    3. Load the model structure and its weights.
    4. Call the predict method on the loaded model.
    5. Return the prediction results as an HTTP request.
