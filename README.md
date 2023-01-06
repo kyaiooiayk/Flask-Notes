@@ -106,4 +106,5 @@ def classify():
 - [Flask Django a thorough comparison](https://codesource.io/flask-vs-django-an-in-depth-comparison/)
 - Hapke, Hannes, and Catherine Nelson. Building machine learning pipelines. O'Reilly Media, 2020
 - [How to use uWSGI and Nginx to serve a Deep Learning model](https://theaisummer.com/uwsgi-nginx/)
+- [How to buid a Docke image for uWSGI and Nginx to serve a DL model](https://theaisummer.com/docker/)
 ***
