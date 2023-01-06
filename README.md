@@ -93,6 +93,7 @@ def classify():
 ## Flask with Nginx and uWSGI
 - [[uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/)] is an application server that aims to provide a full stack for developing and deploying web applications and services. It is named after the Web Server Gateway Interface, which was the first plugin supported by the project.
 - [[Nginx](https://www.nginx.com/)] is a web server that can also be used as a reverse proxy (which provides a more robust connection handling), load balancer, mail proxy and HTTP cache.
+- **Why using both at the same time?** Nginx is a high-performance, highly scalable, and highly available web server (lots of highly here). It acts as a load balancer, a reverse proxy, and a caching mechanism. It is basically uWSGI on steroids. Nginx is extremely popular and is a part of many big companies' tech stack. So why should we use it in front of uWSGI? Well, the main reason is that we simply want the best of both worlds. We want those uWSGI features that are Python-specific but we also like all the extra functionalities Nginx provides. Ok if we don't expect our application to be scaled to millions of users, it might be unnecessary but in this article series, this is our end goal.
 
 ![image](https://user-images.githubusercontent.com/89139139/211042157-326ffac2-71ca-449e-ad10-16055fa6b20b.png)
 
