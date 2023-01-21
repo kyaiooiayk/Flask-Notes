@@ -107,4 +107,5 @@ def classify():
 - Hapke, Hannes, and Catherine Nelson. Building machine learning pipelines. O'Reilly Media, 2020
 - [How to use uWSGI and Nginx to serve a Deep Learning model](https://theaisummer.com/uwsgi-nginx/)
 - [How to buid a Docke image for uWSGI and Nginx to serve a DL model](https://theaisummer.com/docker/)
+- [Deploying a Flask Site Using NGINX Gunicorn, Supervisor and Virtualenv on Ubuntu](http://alexandersimoes.com/hints/2015/10/28/deploying-flask-with-nginx-gunicorn-supervisor-virtualenv-on-ubuntu.html)
 ***
